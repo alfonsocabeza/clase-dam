@@ -15,10 +15,10 @@ public class Alumno {
         numeroMatricula = numeroMatriculaAlumno;
         edad = edadAlumno;
          if (nombre.length() < 3){
-            System.out.println("error");
+            System.out.println("el nombre no puede ser menor de 3 caracteres");
         }
         if (numeroMatricula.length() < 4){
-            System.out.println("error");
+            System.out.println("la matricula no puede ser menor de 4 caracteres");
         }
     }
   
