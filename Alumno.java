@@ -14,12 +14,7 @@ public class Alumno {
         nombre = nombreCompleto;
         numeroMatricula = numeroMatriculaAlumno;
         edad = edadAlumno;
-         if (nombre.length() < 3){
-            System.out.println("el nombre no puede ser menor de 3 caracteres");
-        }
-        if (numeroMatricula.length() < 4){
-            System.out.println("la matricula no puede ser menor de 4 caracteres");
-        }
+        
     }
   
     /**
@@ -48,6 +43,36 @@ public class Alumno {
      * en su cuenta de Github en formato de 7 caracateres
      */
     public String getNombreUsuarioGithub() {
-        return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+        if (nombre.length() < 3){
+            if (numeroMatricula.length() < 4){
+                return nombre + numeroMatricula;
+            }
+            else {
+                if (nombre.length() < 3){
+                    if (numeroMatricula.length() >= 4){
+                    return nombre + numeroMatricula.substring(0, 4);
+                    }
+                    else{
+                      if (numeroMatricula.length() < 4){
+                         return nombre + numeroMatricula.substring(0, 4);
+                      }  
+                      
+                      }
+                    }
+                }
+            }  
+             else{
+                if (nombre.length() >= 3){
+                    if (numeroMatricula.length() < 4){
+                        return nombre.substring(0, 3) + numeroMatricula;
+                    }
+                    else{
+                        if (numeroMatricula.length() >= 4){
+                            return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+                        }                         
+                    }
+                }
+            }
+        return nombre.substring(0, 3) + numeroMatricula.substring(0, 4);  
     }
 }
