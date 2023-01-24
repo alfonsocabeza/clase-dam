@@ -49,16 +49,12 @@ public class Alumno {
                 github = nombre + numeroMatricula;
             }
             else {
-                if (nombre.length() < 3){
                     if (numeroMatricula.length() >= 4){
                         github = nombre + numeroMatricula.substring(0, 4);
                     }
                     else{
-                        if (numeroMatricula.length() < 4){
-                            github =  nombre + numeroMatricula.substring(0, 4);
-                        }  
+                        github =  nombre + numeroMatricula.substring(0, 4); 
                     }
-                }
             }
         }  
         else{
@@ -67,9 +63,7 @@ public class Alumno {
                     github =  nombre.substring(0, 3) + numeroMatricula;
                 }
                 else{
-                    if (numeroMatricula.length() >= 4){
-                        github =  nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
-                    }                         
+                    github =  nombre.substring(0, 3) + numeroMatricula.substring(0, 4);                       
                 }
             }
         }
