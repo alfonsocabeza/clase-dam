@@ -45,28 +45,23 @@ public class Alumno {
     public String getNombreUsuarioGithub() {
         String github = "a";
         if (nombre.length() < 3){
+            //la longitud del nombre  es menor que tres 
             if (numeroMatricula.length() < 4){
+                //la longitud de la matricula  es menor que cuatro 
                 github = nombre + numeroMatricula;
             }
             else {
-                    if (numeroMatricula.length() >= 4){
-                        github = nombre + numeroMatricula.substring(0, 4);
-                    }
-                    else{
-                        github =  nombre + numeroMatricula.substring(0, 4); 
-                    }
+                github =  nombre + numeroMatricula.substring(0, 4); 
             }
         }  
         else{
-            if (nombre.length() >= 3){
-                if (numeroMatricula.length() < 4){
-                    github =  nombre.substring(0, 3) + numeroMatricula;
-                }
-                else{
-                    github =  nombre.substring(0, 3) + numeroMatricula.substring(0, 4);                       
-                }
+            if (numeroMatricula.length() < 4){
+                github =  nombre.substring(0, 3) + numeroMatricula;
             }
-        }
+            else{
+                github =  nombre.substring(0, 3) + numeroMatricula.substring(0, 4);
+            }
+        }      
         return github;  
     }
 }
